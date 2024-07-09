@@ -12,8 +12,11 @@ function CreatePost() {
   };
 
   const handleSubmit = () => {
-    console.log(text);
-    submitPost(text);
+    try {
+      submitPost(text);
+    } catch (error) {
+      alert("Create post error");
+    }
   };
 
   return (

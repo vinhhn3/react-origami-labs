@@ -17,9 +17,12 @@ function Login() {
   };
 
   const handleLogin = async () => {
-    console.log(userName, password);
-    await loginUser({ username: userName, password: password });
-    navigate("/profile");
+    try {
+      await loginUser({ username: userName, password: password });
+      navigate("/profile");
+    } catch (error) {
+      alert("Login error");
+    }
   };
 
   return (

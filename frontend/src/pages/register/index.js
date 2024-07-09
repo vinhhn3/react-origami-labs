@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import AuthContext from "../../context/authContext/AuthContext";
 
 function Register() {
@@ -6,6 +7,7 @@ function Register() {
   const [password, setPassword] = useState("");
   const authContext = useContext(AuthContext);
   const { registerUser } = authContext;
+  const navigate = useNavigate();
 
   const handleUserNameChange = (e) => {
     setUserName(e.target.value);
@@ -14,9 +16,13 @@ function Register() {
     setPassword(e.target.value);
   };
 
-  const handleRegister = () => {
-    console.log(userName, password);
-    registerUser({ username: userName, password: password });
+  const handleRegister = async () => {
+    try {
+      await registerUser({ username: userName, password: password });
+      navigate("/");
+    } catch (error) {
+      alert("Register error");
+    }
   };
 
   return (
