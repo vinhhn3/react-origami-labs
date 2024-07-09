@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+import CreatePost from "../../pages/createPost/index";
 import Home from "../../pages/home/index";
 import Login from "../../pages/login/index";
 import Profile from "../../pages/profile/index";
@@ -13,6 +14,14 @@ const Body = () => {
         <Route index element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route
+          path="/share"
+          element={
+            <RequireAuth>
+              <CreatePost />
+            </RequireAuth>
+          }
+        />
         <Route
           path="/profile"
           element={
