@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import AuthContext from "../../context/authContext/AuthContext";
 
 function Login() {
@@ -6,6 +7,7 @@ function Login() {
   const [password, setPassword] = useState("");
   const authContext = useContext(AuthContext);
   const { loginUser } = authContext;
+  const navigate = useNavigate();
 
   const handleUserNameChange = (e) => {
     setUserName(e.target.value);
@@ -17,6 +19,7 @@ function Login() {
   const handleRegister = () => {
     console.log(userName, password);
     loginUser({ username: userName, password: password });
+    navigate("/profile");
   };
 
   return (
