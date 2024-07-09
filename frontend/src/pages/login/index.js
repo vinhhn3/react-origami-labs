@@ -16,9 +16,9 @@ function Login() {
     setPassword(e.target.value);
   };
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
     console.log(userName, password);
-    loginUser({ username: userName, password: password });
+    await loginUser({ username: userName, password: password });
     navigate("/profile");
   };
 

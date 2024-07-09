@@ -21,8 +21,8 @@ function CreatePost() {
     submitPost(text);
   };
 
-  const handleLogout = () => {
-    logoutUser();
+  const handleLogout = async () => {
+    await logoutUser();
     navigate("/login");
   };
 
@@ -39,7 +39,7 @@ function CreatePost() {
 
       <div>
         <h3>Last 3 posts on your wall</h3>
-        <Posts posts={privatePosts} />
+        <Posts posts={privatePosts.slice(-3).reverse()} />
       </div>
     </div>
   );
