@@ -8,8 +8,8 @@ import { Navbar } from "./layout/navbar/index";
 
 function App() {
   return (
-    <AuthState>
-      <PostState>
+    <PostState>
+      <AuthState>
         <div className="App">
           <Navbar />
           <div className="Container">
@@ -18,8 +18,8 @@ function App() {
           </div>
           <Footer />
         </div>
-      </PostState>
-    </AuthState>
+      </AuthState>
+    </PostState>
   );
 }
 

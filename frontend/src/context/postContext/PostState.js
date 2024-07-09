@@ -4,7 +4,7 @@ import { GET_ALL_POSTS, GET_PRIVATE_POSTS } from "../types";
 import PostContext from "./PostContext";
 import PostReducer from "./PostReducer";
 
-const OrigamiState = (props) => {
+const PostState = (props) => {
   const initialState = {
     publicPosts: [],
     privatePosts: [],
@@ -64,4 +64,4 @@ const OrigamiState = (props) => {
   );
 };
 
-export default OrigamiState;
+export default PostState;
