@@ -1,10 +1,10 @@
-import React from 'react'
-import './index.css'
+import React from "react";
+import Links from "../../components/links/Links";
 
-function Footer() {
+export const Footer = () => {
   return (
-    <div>iindex</div>
-  )
-}
-
-export default Footer
+    <footer className="Footer">
+      <Links logo="footer" />
+    </footer>
+  );
+};
