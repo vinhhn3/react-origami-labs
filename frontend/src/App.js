@@ -1,15 +1,16 @@
 import "./App.css";
+import AuthState from "./context/authContext/AuthState";
 import PostState from "./context/postContext/PostState";
 
 function App() {
   return (
-    <AuthState>
-      <PostState>
+    <PostState>
+      <AuthState>
         <div>
           <h1>Hello World</h1>
         </div>
-      </PostState>
-    </AuthState>
+      </AuthState>
+    </PostState>
   );
 }
 
