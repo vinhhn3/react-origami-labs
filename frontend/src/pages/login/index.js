@@ -16,7 +16,7 @@ function Login() {
     setPassword(e.target.value);
   };
 
-  const handleRegister = () => {
+  const handleLogin = () => {
     console.log(userName, password);
     loginUser({ username: userName, password: password });
     navigate("/profile");
@@ -25,19 +25,23 @@ function Login() {
   return (
     <div>
       <h1>Login Page</h1>
-      <input
-        value={userName}
-        onChange={handleUserNameChange}
-        type="text"
-        placeholder="Username"
-      />
-      <input
-        onChange={handlePasswordChange}
-        value={password}
-        type="password"
-        placeholder="Password"
-      />
-      <button onClick={handleRegister}>Login</button>
+      <div className="form-control">
+        <input
+          value={userName}
+          onChange={handleUserNameChange}
+          type="text"
+          placeholder="Username"
+        />
+      </div>
+      <div className="form-control">
+        <input
+          onChange={handlePasswordChange}
+          value={password}
+          type="password"
+          placeholder="Password"
+        />
+      </div>
+      <button onClick={handleLogin}>Login</button>
     </div>
   );
 }

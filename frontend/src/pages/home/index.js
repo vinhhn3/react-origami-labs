@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from "react";
+import Posts from "../../components/posts/index";
 import PostContext from "../../context/postContext/PostContext";
 
 function Home() {
@@ -15,6 +16,7 @@ function Home() {
     <div>
       <h1>Home Page</h1>
       {/* TODO: Render all posts here */}
+      <Posts posts={publicPosts} />
     </div>
   );
 }

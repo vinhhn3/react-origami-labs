@@ -22,18 +22,22 @@ function Register() {
   return (
     <div>
       <h1>Register Page</h1>
-      <input
-        value={userName}
-        onChange={handleUserNameChange}
-        type="text"
-        placeholder="Username"
-      />
-      <input
-        onChange={handlePasswordChange}
-        value={password}
-        type="password"
-        placeholder="Password"
-      />
+      <div className="form-control">
+        <input
+          value={userName}
+          onChange={handleUserNameChange}
+          type="text"
+          placeholder="Username"
+        />
+      </div>
+      <div className="form-control">
+        <input
+          onChange={handlePasswordChange}
+          value={password}
+          type="password"
+          placeholder="Password"
+        />
+      </div>
       <button onClick={handleRegister}>Register</button>
     </div>
   );
