@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const axiosClient = new axios({
+const axiosClient = axios.create({
   baseURL: "http://localhost:9999/api",
   withCredentials: true,
 });

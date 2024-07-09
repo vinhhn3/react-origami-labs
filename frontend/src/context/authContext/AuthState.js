@@ -44,7 +44,7 @@ const AuthState = (props) => {
   };
 
   const registerUser = async (user) => {
-    const response = await OrigamiApi.register(user);
+    const response = await OrigamiApi.registerUser(user);
     if (response.status === 200) {
       await loginUser({ username: user.username, password: user.password });
     }

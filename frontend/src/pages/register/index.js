@@ -1,11 +1,11 @@
 import React, { useContext, useState } from "react";
 import AuthContext from "../../context/authContext/AuthContext";
 
-function Login() {
+function Register() {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const authContext = useContext(AuthContext);
-  const { loginUser } = authContext;
+  const { registerUser } = authContext;
 
   const handleUserNameChange = (e) => {
     setUserName(e.target.value);
@@ -16,12 +16,12 @@ function Login() {
 
   const handleRegister = () => {
     console.log(userName, password);
-    loginUser({ username: userName, password: password });
+    registerUser({ username: userName, password: password });
   };
 
   return (
     <div>
-      <h1>Login Page</h1>
+      <h1>Register Page</h1>
       <input
         value={userName}
         onChange={handleUserNameChange}
@@ -34,9 +34,9 @@ function Login() {
         type="password"
         placeholder="Password"
       />
-      <button onClick={handleRegister}>Login</button>
+      <button onClick={handleRegister}>Register</button>
     </div>
   );
 }
 
-export default Login;
+export default Register;
