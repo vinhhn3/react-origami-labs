@@ -42,6 +42,13 @@ const PostState = (props) => {
     }
   };
 
+  const deletePost = async (id) => {
+    const response = await OrigamiApi.deletePost(id);
+    if (response.status === 200) {
+      await getPrivatePosts();
+    }
+  };
+
   const clearPrivatePosts = () => {
     dispatch({
       type: GET_PRIVATE_POSTS,
@@ -57,6 +64,7 @@ const PostState = (props) => {
         submitPost,
         getPrivatePosts,
         clearPrivatePosts,
+        deletePost,
       }}
     >
       {props.children}

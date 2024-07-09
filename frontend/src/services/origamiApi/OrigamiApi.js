@@ -29,6 +29,10 @@ const createPost = (text) => {
   return axiosClient.post("/origami", { description: text });
 };
 
+const deletePost = (id) => {
+  return axiosClient.delete(`/origami/${id}`);
+};
+
 const OrigamiApi = {
   getAllPosts,
   registerUser,
@@ -36,6 +40,7 @@ const OrigamiApi = {
   logout,
   getMyPosts,
   createPost,
+  deletePost,
 };
 
 export default OrigamiApi;

@@ -16,7 +16,7 @@ function Home() {
     <div>
       <h1>Home Page</h1>
       {/* TODO: Render all posts here */}
-      <Posts posts={publicPosts.slice(-5)} />
+      <Posts posts={publicPosts.slice(-5)} isPrivate={false} />
     </div>
   );
 }

@@ -26,7 +26,7 @@ function Profile() {
       </div>
       <div>
         <h3>Last 3 posts from your wall</h3>
-        <Posts posts={privatePosts.slice(-3).reverse()} />
+        <Posts isPrivate={true} posts={privatePosts.slice(-3).reverse()} />
       </div>
     </div>
   );
